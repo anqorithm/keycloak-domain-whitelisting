@@ -23,6 +23,8 @@ services:
       KC_DB_PASSWORD: keycloak_password
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
+    volumes:
+      - ./providers:/opt/keycloak/providers
     ports:
       - "8080:8080"
     depends_on:
@@ -37,4 +39,4 @@ volumes:
 
 networks:
   keycloak_network:
-    driver: bridge 
+    driver: bridge
